@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cephe 1936 — Çevrimiçi Büyük Strateji</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+<div id="loading">Harita yükleniyor…</div>
+
+<!-- Ana menü -->
+<div id="screen-menu" class="screen">
+  <div class="menu-box">
+    <h1>CEPHE <span>1936</span></h1>
+    <p class="sub">İki kişilik çevrimiçi büyük strateji · Dünya haritası · 1936–1946</p>
+    <label class="lbl">Komutan adı <input id="player-name" maxlength="20"></label>
+    <button id="btn-continue" class="big hidden">▶ Son oyuna devam et (otomatik kayıt)</button>
+    <button id="btn-sp" class="big">Tek Oyunculu (Yapay Zekâya Karşı)</button>
+    <button id="btn-host" class="big">Çevrimiçi Oda Kur</button>
+    <div class="join-row"><input id="join-code" placeholder="Oda kodu (ör. K7Q2M)" maxlength="12"><button id="btn-join" class="big">Odaya Katıl</button></div>
+    <button id="btn-load">Kayıtlı Oyun Yükle</button>
+    <p id="net-warn" class="warn"></p>
+    <p class="foot">Eşler arası (WebRTC/PeerJS) bağlantı · Sunucu gerektirmez · Ev sahibi simülasyonu yürütür</p>
+  </div>
+</div>
+
+<!-- Lobi -->
+<div id="screen-lobby" class="screen hidden">
+  <canvas id="lobby-map"></canvas>
+  <div class="lobby-side">
+    <h2 id="lobby-title">Lobi</h2>
+    <div id="lobby-info"></div>
+    <h3>Ülke seçimi</h3>
+    <div class="hint">Haritada bir ülkeye tıklayın ya da listeden seçin. Seçilmeyen tüm ülkeleri yapay zekâ yönetir.</div>
+    <div id="lobby-countries"></div>
+    <div class="btnrow lobby-btns"><button id="lobby-back">Geri</button><button id="lobby-start" class="big">Oyunu Başlat</button></div>
+    <div id="lobby-wait" class="hint hidden"></div>
+  </div>
+</div>
+
+<!-- Oyun -->
+<div id="screen-game" class="screen hidden">
+  <canvas id="map"></canvas>
+  <div id="topbar"></div>
+  <div id="leftnav"></div>
+  <div id="panel" class="hidden"><div class="ph"><span id="panel-title"></span><button id="panel-close" class="x">×</button></div><div id="panel-body"></div></div>
+  <div id="provpanel" class="hidden"></div>
+  <div id="unitbar" class="hidden"></div>
+  <div id="mapmodes"></div>
+  <div id="notifs"></div>
+  <div id="chat" class="hidden"><div id="chat-log"></div><input id="chat-input" placeholder="Mesaj yaz, Enter…" maxlength="300"></div>
+</div>
+<div id="tooltip" class="hidden"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
